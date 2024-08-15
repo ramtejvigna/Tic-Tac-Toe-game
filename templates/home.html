@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic Tac Toe</title>
+    <link rel="icon" href="../static/tic-tac-toe (1).png" />
+    <link rel="stylesheet" href="../static/tt.css" />
+    <script src="../static/credential.js"></script>
+</head>
+
+<body>
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Welcome to the Tic-Tac-Toe World. Enjoy the game.</p>
+        </div>
+    </div>
+    <!-- <div id="openingmodal" class="opening">
+        <div>
+            <h1>TIC TAC TOE</h1>
+        </div>
+    </div> -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <img src="../static/tic-tac-toe (1).png" alt="LOGO" style="width: 28px" />
+            <a class="navbar-brand" href="#" style="
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            padding-left: 10px;
+          ">Tic Tac Toe</a>
+        </div>
+        <div class="sidebar" style="font-size: 25px">
+            <a href="#" style="padding-left: 50%">Home</a>
+            <a class="sidebar-htp" href="#">How to Play ?</a>
+            <button id="login" onclick="login()">Log In</button>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="container">
+            <div class="type" style="margin: 40px; font-size: 21px; letter-spacing: 2px">
+                <p>
+                    <center>Challenge your friends or play against the computer</center>
+                </p>
+            </div>
+            <div class="fts" style="font-size: 20px; letter-spacing: 1px">
+                <div class="fts-content">
+                    <p>
+                        Experience the joy of playing Tic Tac Toe with our website's
+                        unique features designed to enhance your gameplay.
+                    </p>
+                    <p style="padding: 40px">
+                        There is no need to wait for your turn!!
+                    </p>
+                    <button>Mutliplayer</button>
+                    <button>Computer AI</button>
+                </div>
+                <img src="https://imgs.search.brave.com/WPb9rbfFMxZrGsFOH8Zhm9UrT74R2zfcb-aSrkE_c08/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2LzE1LzQxLzcy/LzM2MF9GXzYxNTQx/NzI4Ml9STTc0dmE5/d1VKY3FpOHZ0OHZp/OGdWVHhhUUF1dHFy/NC5qcGc"
+                    alt="TTT" style="border-radius: 10px; width: 100%" />
+            </div>
+        </div>
+        <div class="game" style="padding: 10rem">
+            <h3 style="
+            font-size: 45px;
+            letter-spacing: 4px;
+            font-weight: 100;
+            margin-bottom: 30px;
+          ">
+                <center>Join the Game</center>
+            </h3>
+            <center><a href="/board">Play</a></center>
+        </div>
+    </div>
+</body>
+
+</html>
