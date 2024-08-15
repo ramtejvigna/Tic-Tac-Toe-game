@@ -14,32 +14,38 @@ def index():
 
 @app.route('/move', methods=['POST'])
 def move():
-    data = request.json
-    board = data['board']
-    position = data['position']
-    player = data['player']
+    try: 
+        data = request.json
+        board = data['board']
+        position = data['position']
+        player = data['player']
+        
+        if not data or 'board' not in data or 'position' not in data or 'player' not in data:
+            return jsonify({"status": "error", "message": "Invalid data"}), 400
 
-    if player == "X":  # Human player
-        valid_move = ttt.UserTurn(board, position, player)
-        if not valid_move:
-            return jsonify({"status": "invalid", "board": board})
+        if player == "X":  # Human player
+            valid_move = ttt.UserTurn(board, position, player)
+            if not valid_move:
+                return jsonify({"status": "invalid", "board": board})
 
-        winner = ttt.analyzeboard(board)
-        if winner != " ":
-            return jsonify({"status": "win", "winner": winner, "board": board})
+            winner = ttt.analyzeboard(board)
+            if winner != " ":
+                return jsonify({"status": "win", "winner": winner, "board": board})
 
-        if " " not in board:
-            return jsonify({"status": "draw", "board": board})
+            if " " not in board:
+                return jsonify({"status": "draw", "board": board})
 
-        ttt.CompTurn(board)
-        winner = ttt.analyzeboard(board)
-        if winner != " ":
-            return jsonify({"status": "win", "winner": winner, "board": board})
+            ttt.CompTurn(board)
+            winner = ttt.analyzeboard(board)
+            if winner != " ":
+                return jsonify({"status": "win", "winner": winner, "board": board})
 
-        if " " not in board:
-            return jsonify({"status": "draw", "board": board})
+            if " " not in board:
+                return jsonify({"status": "draw", "board": board})
 
-    return jsonify({"status": "continue", "board": board})
+        return jsonify({"status": "continue", "board": board})
+    except Exception as e: 
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
