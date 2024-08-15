@@ -1,5 +1,6 @@
 # app.py
-from flask import Flask, render_template, jsonify, request
+import os
+from flask import Flask, render_template, jsonify, request, send_from_directory
 import tic_tac_toe as ttt
 
 app = Flask(__name__)
@@ -7,6 +8,10 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/board')
 def index():
