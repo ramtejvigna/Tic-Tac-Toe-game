@@ -1,6 +1,6 @@
 # app.py
 from flask import Flask, render_template, jsonify, request
-import tic_tac_toe as ttt
+import src.tic_tac_toe as ttt
 
 app = Flask(__name__)
 
