@@ -1,20 +1,22 @@
 <!-- templates/index.html -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Tic Tac Toe</title>
     <!-- <link rel="icon" href="../static/tic-tac-toe (1).png"> -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
     <h1>Tic Tac Toe</h1>
     <a href="/" id="go-back">Go Back</a>
     <div id="board">
         {% for i in range(9) %}
-            <div class="cell" id="cell-{{ i }}" onclick="makeMove({{ i }})"></div>
-            {% if loop.index % 3 == 0 %}
-                <br>
-            {% endif %}
+        <div class="cell" id="cell-{{ i }}" onclick="makeMove({{ i }})"></div>
+        {% if loop.index % 3 == 0 %}
+        <br>
+        {% endif %}
         {% endfor %}
     </div>
     <div id="foot">
@@ -22,4 +24,5 @@
     </div>
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
+
 </html>
